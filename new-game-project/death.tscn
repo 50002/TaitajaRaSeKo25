@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6uu8hm7bhcs8"]
+
+[ext_resource type="Script" path="res://death.gd" id="1_ks0kv"]
+[ext_resource type="Texture2D" uid="uid://b7kmx8ti7151b" path="res://death screen.png" id="2_ihwup"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ks0kv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ihwup")
+
+[node name="back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 376.0
+offset_right = 663.0
+offset_bottom = 407.0
+text = "BACK TO MAIN MENU"
+
+[node name="again" type="Button" parent="."]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 435.0
+offset_right = 625.0
+offset_bottom = 466.0
+text = "TRY AGAIN"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="again" to="." method="_on_again_pressed"]

@@ -118,7 +118,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if Health > 0:
 		i_frames.start()
 	else:
-		get_tree().change_scene_to_file("res://death_screen.tscn")
+		get_tree().change_scene_to_file("res://death.tscn")
 
 
 func _on_i_frames_timeout() -> void:
