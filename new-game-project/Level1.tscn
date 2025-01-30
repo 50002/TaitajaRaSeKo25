@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://b53v8kvqiau3"]
+[gd_scene load_steps=7 format=4 uid="uid://c3o04q037yq4n"]
 
+[ext_resource type="Script" path="res://level_1.gd" id="1_cg5pp"]
 [ext_resource type="Texture2D" uid="uid://bnqt8wmkh2gh" path="res://2D Pixel Dungeon Asset Pack v2.0/2D Pixel Dungeon Asset Pack/Dungeon_Tileset_at.png" id="1_rs3bh"]
 [ext_resource type="PackedScene" uid="uid://n24fa1ogoy0n" path="res://Player.tscn" id="2_t0ek6"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wgwje"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nd0nr"]
 texture = ExtResource("1_rs3bh")
 0:0/0 = 0
 1:0/0 = 0
@@ -1193,9 +1194,13 @@ texture = ExtResource("1_rs3bh")
 [sub_resource type="TileSet" id="TileSet_27p8i"]
 physics_layer_0/collision_layer = 5
 physics_layer_0/collision_mask = 5
-sources/5 = SubResource("TileSetAtlasSource_wgwje")
+sources/5 = SubResource("TileSetAtlasSource_nd0nr")
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkycr"]
+size = Vector2(11, 47)
+
+[node name="Node2D2" type="Node2D"]
+script = ExtResource("1_cg5pp")
 
 [node name="TileMap" type="TileMap" parent="."]
 format = 2
@@ -1207,3 +1212,13 @@ tile_set = SubResource("TileSet_27p8i")
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_t0ek6")]
 position = Vector2(225, 278)
 scale = Vector2(1.5, 1.5)
+
+[node name="Area2D" type="Area2D" parent="."]
+light_mask = 8
+visibility_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(60.5, 151.5)
+shape = SubResource("RectangleShape2D_jkycr")
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
