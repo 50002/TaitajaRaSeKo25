@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://b53v8kvqiau3"]
+[gd_scene load_steps=7 format=4 uid="uid://b53v8kvqiau3"]
 
 [ext_resource type="Texture2D" uid="uid://bnqt8wmkh2gh" path="res://2D Pixel Dungeon Asset Pack v2.0/2D Pixel Dungeon Asset Pack/Dungeon_Tileset_at.png" id="1_rs3bh"]
 [ext_resource type="PackedScene" uid="uid://n24fa1ogoy0n" path="res://Player.tscn" id="2_t0ek6"]
 [ext_resource type="PackedScene" uid="uid://d27s21rkp4c6p" path="res://Boss.tscn" id="3_o1e8b"]
+[ext_resource type="PackedScene" uid="uid://c22kfodm8tg88" path="res://Skull_enemy.tscn" id="3_wyn04"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wgwje"]
 texture = ExtResource("1_rs3bh")
@@ -1209,5 +1210,8 @@ tile_set = SubResource("TileSet_27p8i")
 position = Vector2(225, 278)
 scale = Vector2(1.5, 1.5)
 
+[node name="CharacterBody2D2" parent="." instance=ExtResource("3_wyn04")]
+position = Vector2(124, 122)
+
 [node name="Boss" parent="." instance=ExtResource("3_o1e8b")]
-position = Vector2(120, 126)
+position = Vector2(255, 135)

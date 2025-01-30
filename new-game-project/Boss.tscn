@@ -904,12 +904,11 @@ autoplay = "default"
 frame = 8
 frame_progress = 1.0
 
-[node name="Attacks" type="Node" parent="CollisionShape2D"]
+[node name="ArmblasterSpawn" type="Node2D" parent="CollisionShape2D"]
+position = Vector2(27, -11)
 
-[node name="ArmblasterSpawn" type="Node2D" parent="CollisionShape2D/Attacks"]
-position = Vector2(27, -13)
-
-[node name="LaserSpawn" type="Node2D" parent="CollisionShape2D/Attacks"]
+[node name="LaserSpawn" type="Node2D" parent="CollisionShape2D"]
+position = Vector2(0, 2)
 
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 0.1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://0g21b1yfls8n"]
+[gd_scene load_steps=12 format=3 uid="uid://0g21b1yfls8n"]
 
 [ext_resource type="Script" path="res://armblaster.gd" id="1_0rytw"]
 [ext_resource type="Texture2D" uid="uid://b1y0qv58tfsnd" path="res://Mecha-stone Golem 0.1/weapon PNG/arm_projectile_glowing.png" id="2_bs28y"]
@@ -56,13 +56,27 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vs1rs"]
+radius = 5.0
+height = 24.0
+
 [node name="Armblaster" type="CharacterBody2D"]
 script = ExtResource("1_0rytw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5a7jk")
+disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 sprite_frames = SubResource("SpriteFrames_uy3d2")
-frame_progress = 0.0243343
+frame_progress = 0.918353
 offset = Vector2(-2.5, 1)
+
+[node name="Hurt" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt"]
+position = Vector2(5, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_vs1rs")
