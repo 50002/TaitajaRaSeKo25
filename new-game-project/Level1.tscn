@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://c3o04q037yq4n"]
+[gd_scene load_steps=5 format=4 uid="uid://b53v8kvqiau3"]
 
 [ext_resource type="Texture2D" uid="uid://bnqt8wmkh2gh" path="res://2D Pixel Dungeon Asset Pack v2.0/2D Pixel Dungeon Asset Pack/Dungeon_Tileset_at.png" id="1_rs3bh"]
-[ext_resource type="PackedScene" path="res://Player.tscn" id="2_t0ek6"]
+[ext_resource type="PackedScene" uid="uid://n24fa1ogoy0n" path="res://Player.tscn" id="2_t0ek6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wgwje"]
 texture = ExtResource("1_rs3bh")
