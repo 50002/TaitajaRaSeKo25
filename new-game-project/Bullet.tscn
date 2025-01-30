@@ -16,6 +16,3 @@ shape = SubResource("CircleShape2D_ua64l")
 texture = ExtResource("1_y8cbq")
 region_enabled = true
 region_rect = Rect2(45, 22, 14, 14)
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(0, 0.521569, 1, 1)

@@ -15,6 +15,7 @@ var state := 0
 #state 4 = movement
 #state 5 = Dash
 #state 8 = animation stopper
+var bullet_path = preload("res://Bullet.tscn")
 @onready var i_frames: Timer = $iFrames
 @onready var dt: Timer = $dt
 
@@ -69,9 +70,12 @@ func _physics_process(delta: float) -> void:
 
 	
 	if Input.is_action_pressed("Attack"):
-		state = 1
-	elif state == 1:
-		state = 0
+		var bullet = bullet_path.instantiate()
+		bullet.direction = $PivotPoint.rotation
+		bullet.pos=$PivotPoint/Sprite2D/bulletLoc.position
+		bullet.rot=$PivotPoint.global_rotation
+		get_parent().add_child(bullet)
+	
 	
 	if Input.is_action_pressed("ui_right"):
 		$PivotPoint.rotate(5.0*delta)

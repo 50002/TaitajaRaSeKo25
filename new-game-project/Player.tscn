@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://n24fa1ogoy0n"]
+[gd_scene load_steps=91 format=3 uid="uid://n24fa1ogoy0n"]
 
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_heaa2"]
 [ext_resource type="Texture2D" uid="uid://dfqapfu3notha" path="res://pixil-frame-0(3).png" id="2_54jc4"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://ci1higuohyfaf" path="res://pixil-frame-0(2).png" id="7_vtjvf"]
 [ext_resource type="Texture2D" uid="uid://cxm5af2g2x2gn" path="res://Tiny Wonder Forest 1.0/Tiny Wonder Forest 1.0/characters/main character/cat kigurumi walk and idle.png" id="8_axyt3"]
 [ext_resource type="Texture2D" uid="uid://cimmbirja3cck" path="res://pixil-frame-0(4).png" id="8_f0p34"]
-[ext_resource type="PackedScene" uid="uid://d6fdnxtyeojr" path="res://Bullet.tscn" id="9_ry0xv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mya1r"]
 radius = 6.0
@@ -719,11 +718,6 @@ region_rect = Rect2(59.081, 0, 21.4352, 20.5254)
 [node name="bulletLoc" type="Node2D" parent="PivotPoint/Sprite2D"]
 position = Vector2(-5.45, -5.657)
 rotation = -0.785398
-
-[node name="RigidBody2D" parent="." instance=ExtResource("9_ry0xv")]
-visible = false
-position = Vector2(0.146371, -12.8538)
-scale = Vector2(1, 1)
 
 [connection signal="timeout" from="DashCD" to="." method="_on_dash_cd_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
