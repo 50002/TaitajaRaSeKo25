@@ -1,0 +1,101 @@
+[gd_scene load_steps=9 format=3 uid="uid://d0pywhwm04pps"]
+
+[ext_resource type="Texture2D" uid="uid://dqtfb3qjel6tp" path="res://2D Pixel Dungeon Asset Pack v2.0/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_3.png" id="1_3wue8"]
+[ext_resource type="Script" path="res://spikes.gd" id="1_twwe1"]
+[ext_resource type="Texture2D" uid="uid://bsopwdckw1xbo" path="res://2D Pixel Dungeon Asset Pack v2.0/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_4.png" id="2_jwk5k"]
+[ext_resource type="Texture2D" uid="uid://dcrh2rj0lfif6" path="res://2D Pixel Dungeon Asset Pack v2.0/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_2.png" id="3_d6ffp"]
+[ext_resource type="Texture2D" uid="uid://cfpumk0ke34p5" path="res://2D Pixel Dungeon Asset Pack v2.0/2D Pixel Dungeon Asset Pack/items and trap_animation/peaks/peaks_1.png" id="4_kyqb6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uwtq1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3wue8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jwk5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d6ffp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kyqb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kyqb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kyqb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kyqb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kyqb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kyqb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kyqb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d6ffp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jwk5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_3wue8")
+}],
+"loop": false,
+"name": &"Full_extend",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3wue8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jwk5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_3wue8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tlem8"]
+radius = 8.06226
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0opfr"]
+size = Vector2(11, 13)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_twwe1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uwtq1")
+animation = &"Full_extend"
+autoplay = "default"
+
+[node name="detection" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
+shape = SubResource("CircleShape2D_tlem8")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_0opfr")
+disabled = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="detection" to="." method="_on_detection_area_entered"]

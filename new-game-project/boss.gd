@@ -5,7 +5,7 @@ var player
 const BASE_SPEED = 500
 var direction
 
-var HP := 1
+var HP := 10
 const Actions = [1, 2, 3]
 var blaster = preload("res://armblaster.tscn")
 
