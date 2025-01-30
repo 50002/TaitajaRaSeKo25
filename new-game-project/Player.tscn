@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://n24fa1ogoy0n"]
+[gd_scene load_steps=93 format=3 uid="uid://n24fa1ogoy0n"]
 
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_heaa2"]
 [ext_resource type="Texture2D" uid="uid://dfqapfu3notha" path="res://pixil-frame-0(3).png" id="2_54jc4"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cxm5af2g2x2gn" path="res://Tiny Wonder Forest 1.0/Tiny Wonder Forest 1.0/characters/main character/cat kigurumi walk and idle.png" id="8_axyt3"]
 [ext_resource type="Texture2D" uid="uid://cimmbirja3cck" path="res://pixil-frame-0(4).png" id="8_f0p34"]
 [ext_resource type="AudioStream" uid="uid://b5c83si01ig18" path="res://LVS04_05_Code_Red_Alert_loop.wav" id="9_cttsu"]
+[ext_resource type="Texture2D" uid="uid://81isiir1i2oj" path="res://Tiny Wonder UI Free/Tiny Wonder UI Free/buttons free.png" id="10_kqqbl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mya1r"]
 radius = 6.0
@@ -724,6 +725,20 @@ one_shot = true
 stream = ExtResource("9_cttsu")
 pitch_scale = 0.75
 autoplay = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-294, -166)
+scale = Vector2(1.90909, 1.46429)
+texture = ExtResource("10_kqqbl")
+centered = false
+region_enabled = true
+region_rect = Rect2(50, 67, 44, 28)
+
+[node name="Health" type="Label" parent="."]
+offset_left = -287.0
+offset_top = -162.0
+offset_right = -247.0
+offset_bottom = -139.0
 
 [connection signal="timeout" from="DashCD" to="." method="_on_dash_cd_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

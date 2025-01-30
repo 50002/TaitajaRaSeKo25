@@ -28,6 +28,9 @@ var bullet_path = preload("res://Bullet.tscn")
 
 
 func _physics_process(delta: float) -> void:
+	
+	
+	$Health.text = ("Health: " + str(Health))
 	#kääntää spriten oikeeseen suuntaan
 	if Input.is_action_pressed("RIGHT") == true:
 		RorL = 1
