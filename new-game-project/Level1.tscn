@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://c3o04q037yq4n"]
+[gd_scene load_steps=9 format=4 uid="uid://b53v8kvqiau3"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_cg5pp"]
 [ext_resource type="Texture2D" uid="uid://bnqt8wmkh2gh" path="res://2D Pixel Dungeon Asset Pack v2.0/2D Pixel Dungeon Asset Pack/Dungeon_Tileset_at.png" id="1_rs3bh"]
 [ext_resource type="PackedScene" uid="uid://n24fa1ogoy0n" path="res://Player.tscn" id="2_t0ek6"]
-[ext_resource type="PackedScene" uid="uid://733rwva4mx4a" path="res://Boss.tscn" id="3_o1e8b"]
+[ext_resource type="PackedScene" uid="uid://d27s21rkp4c6p" path="res://Boss.tscn" id="3_o1e8b"]
 [ext_resource type="PackedScene" uid="uid://c22kfodm8tg88" path="res://Skull_enemy.tscn" id="3_wyn04"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wgwje"]
@@ -1201,7 +1201,7 @@ sources/5 = SubResource("TileSetAtlasSource_wgwje")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibilo"]
 size = Vector2(8, 57)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_cg5pp")
 
 [node name="TileMap" type="TileMap" parent="."]

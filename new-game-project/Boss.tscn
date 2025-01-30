@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://733rwva4mx4a"]
+[gd_scene load_steps=128 format=3 uid="uid://d27s21rkp4c6p"]
 
 [ext_resource type="Script" path="res://boss.gd" id="1_1603g"]
 [ext_resource type="Texture2D" uid="uid://dsu54dlpsur6" path="res://Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" id="1_gc0gw"]
