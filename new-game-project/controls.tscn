@@ -23,10 +23,10 @@ texture = ExtResource("2_xf80a")
 
 [node name="TextEdit" type="TextEdit" parent="."]
 layout_mode = 0
-offset_left = 484.0
-offset_top = 22.0
-offset_right = 751.0
-offset_bottom = 63.0
+offset_left = 447.0
+offset_top = 23.0
+offset_right = 714.0
+offset_bottom = 64.0
 text = "Loading, Game will begin shortly."
 editable = false
 
