@@ -1,5 +1,5 @@
 extends Node2D
-var enemycount = [1,1,1,1] 
+var enemycount = [1,1,1] 
 
 
 func _physics_process(delta: float) -> void:

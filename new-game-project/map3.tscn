@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://bnxqbtugdi7rb"]
+[gd_scene load_steps=9 format=4 uid="uid://bplrwtuuwldje"]
 
 [ext_resource type="Texture2D" uid="uid://bnqt8wmkh2gh" path="res://2D Pixel Dungeon Asset Pack v2.0/2D Pixel Dungeon Asset Pack/Dungeon_Tileset_at.png" id="1_fph0a"]
 [ext_resource type="Script" path="res://map_3.gd" id="1_py0sn"]
 [ext_resource type="PackedScene" uid="uid://n24fa1ogoy0n" path="res://Player.tscn" id="3_sdyvu"]
+[ext_resource type="PackedScene" uid="uid://d27s21rkp4c6p" path="res://Boss.tscn" id="4_2xjrm"]
+[ext_resource type="PackedScene" uid="uid://c22kfodm8tg88" path="res://Skull_enemy.tscn" id="5_vbhi5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8iwin"]
 texture = ExtResource("1_fph0a")
@@ -1215,7 +1217,22 @@ tile_set = SubResource("TileSet_dyv1p")
 position = Vector2(57.5, 263.5)
 shape = SubResource("RectangleShape2D_a33s5")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_sdyvu")]
+[node name="Player" parent="." instance=ExtResource("3_sdyvu")]
 position = Vector2(484, 7)
+
+[node name="Boss" parent="." instance=ExtResource("4_2xjrm")]
+position = Vector2(204, 262)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("5_vbhi5")]
+position = Vector2(163, 224)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("5_vbhi5")]
+position = Vector2(205, -43)
+
+[node name="CharacterBody2D4" parent="." instance=ExtResource("5_vbhi5")]
+position = Vector2(257, 187)
+
+[node name="CharacterBody2D5" parent="." instance=ExtResource("5_vbhi5")]
+position = Vector2(169, 140)
 
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
