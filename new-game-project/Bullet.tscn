@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://d6fdnxtyeojr"]
+
+[ext_resource type="Script" path="res://point_light_2d.gd" id="1_ebkf4"]
+[ext_resource type="Texture2D" uid="uid://cimmbirja3cck" path="res://pixil-frame-0(4).png" id="1_y8cbq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ua64l"]
+radius = 7.0
+
+[node name="RigidBody2D" type="RigidBody2D"]
+script = ExtResource("1_ebkf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ua64l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_y8cbq")
+region_enabled = true
+region_rect = Rect2(45, 22, 14, 14)
