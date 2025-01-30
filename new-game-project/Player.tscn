@@ -685,7 +685,7 @@ animation = &"deathR"
 autoplay = "idleR"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+zoom = Vector2(2, 2)
 
 [node name="DashCD" type="Timer" parent="."]
 wait_time = 3.0
