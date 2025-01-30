@@ -38,4 +38,6 @@ func _on_attack_timer_timeout() -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
+	HP -= 1
+	if HP <= 0:
+		queue_free()

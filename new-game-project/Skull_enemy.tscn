@@ -51,8 +51,8 @@ sprite_frames = SubResource("SpriteFrames_3mpn8")
 frame_progress = 0.918572
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 10
+collision_layer = 8
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_6cx3b")

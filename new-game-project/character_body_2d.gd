@@ -118,8 +118,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if Health > 0:
 		i_frames.start()
 	else:
-		state = 3
-		dt.start()
+		get_tree().reload_current_scene()
 
 
 func _on_i_frames_timeout() -> void:
@@ -127,8 +126,8 @@ func _on_i_frames_timeout() -> void:
 	state = 0
 
 
-func _on_dt_timeout() -> void:
-	get_tree().reload_current_scene()
+
+	
 
 
 func _on_attack_cd_timeout() -> void:
