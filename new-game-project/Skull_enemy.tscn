@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://c22kfodm8tg88"]
+
+[ext_resource type="Script" path="res://Enemy.gd" id="1_hitf5"]
+[ext_resource type="Texture2D" uid="uid://ctdxsy5sd4j8c" path="res://2D Pixel Dungeon Asset Pack v2.0/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skull/v2/skull_v2_1.png" id="2_eblmf"]
+[ext_resource type="Texture2D" uid="uid://dagsb75o1rvjw" path="res://2D Pixel Dungeon Asset Pack v2.0/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skull/v2/skull_v2_2.png" id="3_mqqo8"]
+[ext_resource type="Texture2D" uid="uid://b8vmotwirhk0b" path="res://2D Pixel Dungeon Asset Pack v2.0/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skull/v2/skull_v2_3.png" id="4_633ty"]
+[ext_resource type="Texture2D" uid="uid://c62s4jin24rwk" path="res://2D Pixel Dungeon Asset Pack v2.0/2D Pixel Dungeon Asset Pack/Character_animation/monsters_idle/skull/v2/skull_v2_4.png" id="5_67ycr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y2iq2"]
+radius = 5.09902
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rjxe"]
+atlas = ExtResource("2_eblmf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3mpn8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rjxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mqqo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_633ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_67ycr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6cx3b"]
+radius = 8.24621
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+rotation = 0.253073
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_hitf5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y2iq2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+rotation = -0.23562
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_3mpn8")
+frame_progress = 0.918572
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_6cx3b")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

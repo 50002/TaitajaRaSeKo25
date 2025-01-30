@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://b53v8kvqiau3"]
+[gd_scene load_steps=6 format=4 uid="uid://b53v8kvqiau3"]
 
 [ext_resource type="Texture2D" uid="uid://bnqt8wmkh2gh" path="res://2D Pixel Dungeon Asset Pack v2.0/2D Pixel Dungeon Asset Pack/Dungeon_Tileset_at.png" id="1_rs3bh"]
 [ext_resource type="PackedScene" uid="uid://n24fa1ogoy0n" path="res://Player.tscn" id="2_t0ek6"]
+[ext_resource type="PackedScene" uid="uid://c22kfodm8tg88" path="res://Skull_enemy.tscn" id="3_wyn04"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7wf0f"]
 texture = ExtResource("1_rs3bh")
@@ -1207,3 +1208,15 @@ tile_set = SubResource("TileSet_27p8i")
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_t0ek6")]
 position = Vector2(225, 278)
 scale = Vector2(1.5, 1.5)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("3_wyn04")]
+position = Vector2(97, 93)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("3_wyn04")]
+position = Vector2(160, 92)
+
+[node name="CharacterBody2D4" parent="." instance=ExtResource("3_wyn04")]
+position = Vector2(216, 93)
+
+[node name="CharacterBody2D5" parent="." instance=ExtResource("3_wyn04")]
+position = Vector2(279, 92)
