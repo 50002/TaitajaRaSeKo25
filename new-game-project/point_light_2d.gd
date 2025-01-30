@@ -17,3 +17,7 @@ func _process(delta: float) -> void:
 
 func _on_despawn_timeout() -> void:
 	queue_free()
+
+
+func _on_hit_area_body_entered(body: Node2D) -> void:
+	queue_free()
