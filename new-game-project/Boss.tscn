@@ -1,11 +1,10 @@
-[gd_scene load_steps=127 format=3 uid="uid://733rwva4mx4a"]
+[gd_scene load_steps=128 format=3 uid="uid://d27s21rkp4c6p"]
 
 [ext_resource type="Script" path="res://boss.gd" id="1_1603g"]
 [ext_resource type="Texture2D" uid="uid://dsu54dlpsur6" path="res://Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" id="1_gc0gw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bu4qc"]
-radius = 13.0
-height = 44.0
+height = 38.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ak8a3"]
 atlas = ExtResource("1_gc0gw")
@@ -524,6 +523,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_exmpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exmpk")
 }],
 "loop": false,
 "name": &"Action1",
@@ -889,6 +891,10 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qovsa"]
+radius = 13.0
+height = 44.0
+
 [node name="Boss" type="CharacterBody2D"]
 script = ExtResource("1_1603g")
 
@@ -901,8 +907,6 @@ position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_vrjlx")
 animation = &"Action1"
 autoplay = "default"
-frame = 8
-frame_progress = 1.0
 
 [node name="ArmblasterSpawn" type="Node2D" parent="CollisionShape2D"]
 position = Vector2(27, -11)
@@ -911,7 +915,16 @@ position = Vector2(27, -11)
 position = Vector2(0, 2)
 
 [node name="AttackTimer" type="Timer" parent="."]
-wait_time = 0.1
 autostart = true
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -3)
+shape = SubResource("CapsuleShape2D_qovsa")
+
+[connection signal="animation_finished" from="CollisionShape2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

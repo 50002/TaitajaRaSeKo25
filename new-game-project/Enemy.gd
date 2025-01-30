@@ -27,4 +27,5 @@ func _process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	Health -= 1
 	if Health <= 0:
+		get_parent().enemycount.pop_front()
 		queue_free()
