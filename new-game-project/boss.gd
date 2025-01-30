@@ -5,7 +5,7 @@ var player
 const BASE_SPEED = 500
 var direction
 
-var HP := 50
+var HP := 20
 const Actions = [1, 2, 3]
 var blaster = preload("res://armblaster.tscn")
 
@@ -35,3 +35,7 @@ func _on_attack_timer_timeout() -> void:
 		pass #laser
 	else:
 		pass #freeSpace
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.
