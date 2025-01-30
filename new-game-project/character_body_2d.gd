@@ -114,6 +114,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	state = 2
 	Health -= 1
 	$Hurtbox/CollisionShape2D.disabled = true
+	print(str(Health))
 	if Health > 0:
 		i_frames.start()
 	else:

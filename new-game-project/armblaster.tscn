@@ -69,7 +69,7 @@ disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 sprite_frames = SubResource("SpriteFrames_uy3d2")
-frame_progress = 0.918353
+frame_progress = 0.628256
 offset = Vector2(-2.5, 1)
 
 [node name="Hurt" type="Area2D" parent="."]
