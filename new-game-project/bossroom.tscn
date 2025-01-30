@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://bl5236sfe118k"]
+[gd_scene load_steps=8 format=4 uid="uid://cc87lvyta0r7b"]
 
 [ext_resource type="Script" path="res://bossroom.gd" id="1_5wmq3"]
 [ext_resource type="Texture2D" uid="uid://bnqt8wmkh2gh" path="res://2D Pixel Dungeon Asset Pack v2.0/2D Pixel Dungeon Asset Pack/Dungeon_Tileset_at.png" id="1_6tge0"]
 [ext_resource type="PackedScene" uid="uid://n24fa1ogoy0n" path="res://Player.tscn" id="3_o65mp"]
+[ext_resource type="PackedScene" uid="uid://d27s21rkp4c6p" path="res://Boss.tscn" id="4_yk6ph"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1wbgr"]
 texture = ExtResource("1_6tge0")
@@ -1215,7 +1216,19 @@ tile_set = SubResource("TileSet_8e5f8")
 position = Vector2(58.25, 152)
 shape = SubResource("RectangleShape2D_mnnyo")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_o65mp")]
+[node name="Player" parent="." instance=ExtResource("3_o65mp")]
 position = Vector2(418, 149)
+
+[node name="Boss" parent="." instance=ExtResource("4_yk6ph")]
+position = Vector2(163, 389)
+
+[node name="Boss2" parent="." instance=ExtResource("4_yk6ph")]
+position = Vector2(327, 386)
+
+[node name="Boss3" parent="." instance=ExtResource("4_yk6ph")]
+position = Vector2(161, -37)
+
+[node name="Boss4" parent="." instance=ExtResource("4_yk6ph")]
+position = Vector2(297, -34)
 
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

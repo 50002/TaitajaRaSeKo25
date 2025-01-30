@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var player
-const BASE_SPEED = 3500
+const BASE_SPEED = 4000
 var direction
 var Health = 1
 var pos :Vector2
