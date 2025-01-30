@@ -15,6 +15,7 @@ var state := 0
 #state 4 = movement
 #state 5 = Dash
 #state 8 = animation stopper
+var AtkCD := false
 var bullet_path = preload("res://Bullet.tscn")
 @onready var i_frames: Timer = $iFrames
 @onready var dt: Timer = $dt
@@ -23,6 +24,7 @@ var bullet_path = preload("res://Bullet.tscn")
 @onready var animate: AnimatedSprite2D = $CollisionShape2D/AnimatedSprite2D
 @onready var dash_cd: Timer = $DashCD
 @onready var catsuit: AnimatedSprite2D = $CollisionShape2D/Catsuit
+@onready var attack_cd: Timer = $attackCD
 
 
 func _physics_process(delta: float) -> void:
@@ -69,12 +71,14 @@ func _physics_process(delta: float) -> void:
 			catsuit.play("walkL")
 
 	
-	if Input.is_action_pressed("Attack"):
+	if Input.is_action_pressed("Attack") and AtkCD == false:
 		var bullet = bullet_path.instantiate()
-		bullet.direction = $PivotPoint.rotation
-		bullet.pos=$PivotPoint/Sprite2D/bulletLoc.position
+		bullet.direction = $PivotPoint.global_rotation - deg_to_rad(90)
+		bullet.pos=$PivotPoint/Sprite2D/bulletLoc.global_position
 		bullet.rot=$PivotPoint.global_rotation
 		get_parent().add_child(bullet)
+		attack_cd.start()
+		AtkCD = true
 	
 	
 	if Input.is_action_pressed("ui_right"):
@@ -124,3 +128,7 @@ func _on_i_frames_timeout() -> void:
 
 func _on_dt_timeout() -> void:
 	get_tree().reload_current_scene()
+
+
+func _on_attack_cd_timeout() -> void:
+	AtkCD = false

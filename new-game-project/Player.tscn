@@ -719,7 +719,12 @@ region_rect = Rect2(59.081, 0, 21.4352, 20.5254)
 position = Vector2(-5.45, -5.657)
 rotation = -0.785398
 
+[node name="attackCD" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
 [connection signal="timeout" from="DashCD" to="." method="_on_dash_cd_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="timeout" from="iFrames" to="." method="_on_i_frames_timeout"]
 [connection signal="timeout" from="dt" to="." method="_on_dt_timeout"]
+[connection signal="timeout" from="attackCD" to="." method="_on_attack_cd_timeout"]
