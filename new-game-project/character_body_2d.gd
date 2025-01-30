@@ -113,7 +113,7 @@ func _on_dash_cd_timeout() -> void:
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	state = 2
 	Health -= 1
-	$Hurtbox/CollisionShape2D.disabled == true
+	$Hurtbox/CollisionShape2D.disabled = true
 	if Health > 0:
 		i_frames.start()
 	else:
@@ -122,7 +122,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 
 
 func _on_i_frames_timeout() -> void:
-	$Hurtbox/CollisionShape2D.disabled == true
+	$Hurtbox/CollisionShape2D.disabled = false
 	state = 0
 
 
