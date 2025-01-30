@@ -10,12 +10,17 @@ func _ready() -> void:
 	
 	
 func _process(delta: float) -> void:
-	direction=(player.position - $".".position).normalized()
-	velocity = direction * BASE_SPEED * delta 
-	look_at(player.position)
+	if player.state != 2:
+		direction=(player.position - $".".position).normalized()
+		velocity = direction * BASE_SPEED * delta 
+		look_at(player.position)
+		
+	else:
+		direction=(player.position - $".".position).normalized()
+		velocity = -direction * BASE_SPEED * delta 
+
+		
 	move_and_slide()
-
-
 
 
 
